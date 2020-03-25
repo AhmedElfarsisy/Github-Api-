@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/projectsFragment">
+
+    <fragment
+        android:id="@+id/repoDetailsFragment"
+        android:name="com.elfarsisy.githubapi.ui.fragments.repositoriesdetails.RepoDetailsFragment"
+        android:label="RepoDetailsFragment" >
+        <action
+            android:id="@+id/action_repoDetailsFragment_to_projectsFragment"
+            app:destination="@id/projectsFragment" />
+        <argument android:name="selected_repository"
+            app:argType="com.elfarsisy.githubapi.model.Repository"/>
+    </fragment>
+    <fragment
+        android:id="@+id/projectsFragment"
+        android:name="com.elfarsisy.githubapi.ui.fragments.repositories.projectsFragment"
+        android:label="projectsFragment" >
+        <action
+            android:id="@+id/action_projectsFragment_to_repoDetailsFragment"
+            app:destination="@id/repoDetailsFragment" />
+    </fragment>
+</navigation>
